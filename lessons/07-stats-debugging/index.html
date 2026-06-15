@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>第 07 课：getStats 诊断与连接状态</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">Lesson 07 · Observability</p>
+        <h1>getStats 诊断与连接状态</h1>
+        <p>用一个无服务器 loopback 连接观察 WebRTC 的运行时指标，并把原始报告转成可读的排障摘要。</p>
+      </header>
+
+      <section class="controls">
+        <button id="start">启动诊断连接</button>
+        <button id="stop" class="danger" disabled>停止诊断</button>
+      </section>
+
+      <section class="grid">
+        <article class="panel"><h2>本地预览</h2><video id="local" autoplay muted playsinline></video></article>
+        <article class="panel"><h2>远端回环</h2><video id="remote" autoplay playsinline></video></article>
+      </section>
+
+      <section class="metrics" aria-live="polite">
+        <article><span>连接状态</span><strong id="connectionState">idle</strong></article>
+        <article><span>ICE 状态</span><strong id="iceState">idle</strong></article>
+        <article><span>发送码率</span><strong id="bitrate">0 kbps</strong></article>
+        <article><span>发送帧率</span><strong id="frames">0 fps</strong></article>
+        <article><span>RTT</span><strong id="rtt">未知</strong></article>
+        <article><span>候选对</span><strong id="candidatePair">未选择</strong></article>
+      </section>
+
+      <section class="panel">
+        <h2>原始报告摘要</h2>
+        <pre id="rawStats"></pre>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
