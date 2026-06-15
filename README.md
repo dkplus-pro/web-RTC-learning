@@ -1,6 +1,6 @@
-# WebRTC Learning Course
+# WebRTC 渐进式学习课程
 
-面向有 7 年经验的前端架构师，从零开始学习 WebRTC：每节课都有文档、注释代码和独立可运行 demo。
+本课程面向有 7 年经验的前端架构师，从零开始系统学习 WebRTC。每节课都包含中文文档、中文注释代码，以及可独立运行的 demo，便于逐步理解媒体采集、点对点连接、信令、数据通道、调试和生产架构。
 
 ## 运行方式
 
@@ -21,7 +21,7 @@ npm run serve
 
 ## 课程目录
 
-| 课次 | 主题 | Demo |
+| 课次 | 主题 | 运行命令 |
 | --- | --- | --- |
 | 01 | 媒体采集与权限模型 | `npm run lesson:01` |
 | 02 | 设备枚举与媒体约束 | `npm run lesson:02` |
@@ -34,7 +34,7 @@ npm run serve
 
 ## 官方资料
 
-- MDN WebRTC API: https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API
-- MDN MediaDevices.getUserMedia: https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-- MDN RTCPeerConnection: https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection
-- MDN WebRTC Data Channels: https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Using_data_channels
+- MDN WebRTC API 文档：https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API
+- MDN MediaDevices.getUserMedia 文档：https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+- MDN RTCPeerConnection 文档：https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection
+- MDN WebRTC Data Channel 使用指南：https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Using_data_channels

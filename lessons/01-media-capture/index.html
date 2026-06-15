@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lesson 01 — Media capture</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">WebRTC Course · Lesson 01</p>
+        <h1>Media capture and permission lifecycle</h1>
+        <p>
+          Request local camera and microphone access, inspect the stream that the browser returns,
+          and practice explicit track teardown before moving into peer connections.
+        </p>
+      </header>
+
+      <section class="grid" aria-label="Media capture demo">
+        <article class="panel preview-panel">
+          <div class="preview-header">
+            <h2>Local preview</h2>
+            <span id="secureContextBadge" class="badge">Checking secure context…</span>
+          </div>
+          <video id="preview" autoplay playsinline muted></video>
+          <p id="emptyState" class="empty-state">No active media stream yet.</p>
+        </article>
+
+        <article class="panel controls-panel">
+          <h2>Capture controls</h2>
+          <div class="button-row">
+            <button id="startAv" type="button">Start camera + microphone</button>
+            <button id="startVideo" type="button">Start video only</button>
+            <button id="startAudio" type="button">Start audio only</button>
+            <button id="stop" class="secondary" type="button" disabled>Stop all tracks</button>
+          </div>
+          <p class="hint">
+            The demo intentionally requests simple constraints first. Lesson 02 adds device choice,
+            capabilities, and constraint negotiation.
+          </p>
+          <output id="status" class="status" aria-live="polite">Idle. Choose a capture mode.</output>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Stream and track inventory</h2>
+        <div id="trackList" class="track-list">Start capture to inspect tracks.</div>
+      </section>
+
+      <section class="panel concepts">
+        <h2>What to notice</h2>
+        <ul>
+          <li><strong>Permission:</strong> browser chrome owns the prompt; your UI explains intent.</li>
+          <li><strong>Stream shape:</strong> a stream is a container; audio and video arrive as separate tracks.</li>
+          <li><strong>Settings:</strong> the actual camera resolution may differ from what you requested.</li>
+          <li><strong>Teardown:</strong> `track.stop()` releases hardware and ends the track.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
