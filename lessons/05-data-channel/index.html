@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>第 05 课：RTCDataChannel 文本聊天</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Lesson 05</p>
+        <h1>RTCDataChannel 文本聊天</h1>
+        <p>建立点对点数据通道，在两个端点之间发送文本消息。</p>
+      </section>
+
+      <section class="controls" aria-label="实验控制">
+        <button id="connectButton">建立数据通道</button>
+        <button id="closeButton" disabled>关闭连接</button>
+      </section>
+
+      <section class="chat-grid">
+        <article class="card">
+          <h2>左侧端点</h2>
+          <div id="leftMessages" class="messages" aria-live="polite"></div>
+          <form id="leftForm" class="composer">
+            <input id="leftInput" placeholder="从左侧发送消息" disabled />
+            <button id="leftSendButton" disabled>发送</button>
+          </form>
+        </article>
+        <article class="card">
+          <h2>右侧端点</h2>
+          <div id="rightMessages" class="messages" aria-live="polite"></div>
+          <form id="rightForm" class="composer">
+            <input id="rightInput" placeholder="从右侧回复消息" disabled />
+            <button id="rightSendButton" disabled>发送</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>通道日志</h2>
+        <pre id="logOutput" aria-live="polite">等待建立数据通道……</pre>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
