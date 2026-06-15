@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>第 03 课：RTCPeerConnection 与 Offer/Answer</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Lesson 03</p>
+        <h1>单页 RTCPeerConnection 与 Offer/Answer</h1>
+        <p>在一个页面里模拟呼叫端与接听端，观察一次完整的媒体协商。</p>
+      </section>
+
+      <section class="controls" aria-label="实验控制">
+        <button id="startMediaButton">启动本地媒体</button>
+        <button id="connectButton" disabled>建立连接</button>
+        <button id="stopButton" disabled>停止并清理</button>
+      </section>
+
+      <section class="video-grid" aria-label="视频预览">
+        <article class="card">
+          <h2>本地端</h2>
+          <video id="localVideo" autoplay playsinline muted></video>
+        </article>
+        <article class="card">
+          <h2>远端端</h2>
+          <video id="remoteVideo" autoplay playsinline></video>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>协商日志</h2>
+        <pre id="logOutput" aria-live="polite">等待启动实验……</pre>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
