@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lesson 02 — Device constraints</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">WebRTC Course · Lesson 02</p>
+        <h1>Device selection and constraint negotiation</h1>
+        <p>
+          Enumerate media devices, request a chosen camera and microphone, and compare requested
+          constraints against the settings the browser actually negotiated.
+        </p>
+      </header>
+
+      <section class="layout">
+        <article class="panel preview-panel">
+          <h2>Negotiated preview</h2>
+          <video id="preview" autoplay playsinline muted></video>
+          <output id="status" class="status" aria-live="polite">Unlock devices to begin.</output>
+        </article>
+
+        <article class="panel">
+          <h2>Devices</h2>
+          <div class="field">
+            <label for="videoDevice">Camera</label>
+            <select id="videoDevice"></select>
+          </div>
+          <div class="field">
+            <label for="audioDevice">Microphone</label>
+            <select id="audioDevice"></select>
+          </div>
+          <div class="button-row">
+            <button id="unlockDevices" type="button">Unlock devices</button>
+            <button id="refreshDevices" class="secondary" type="button">Refresh list</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel constraints-panel">
+        <h2>Quality preferences</h2>
+        <div class="constraint-grid">
+          <label>
+            Width <output id="widthValue">1280</output> px
+            <input id="width" type="range" min="320" max="1920" step="80" value="1280" />
+          </label>
+          <label>
+            Height <output id="heightValue">720</output> px
+            <input id="height" type="range" min="240" max="1080" step="60" value="720" />
+          </label>
+          <label>
+            Frame rate <output id="frameRateValue">30</output> fps
+            <input id="frameRate" type="range" min="10" max="60" step="5" value="30" />
+          </label>
+        </div>
+        <div class="button-row inline">
+          <button id="start" type="button">Start with constraints</button>
+          <button id="apply" class="secondary" type="button" disabled>Apply to active video track</button>
+          <button id="stop" class="danger" type="button" disabled>Stop</button>
+        </div>
+      </section>
+
+      <section class="inspector-grid">
+        <article class="panel">
+          <h2>Requested constraints</h2>
+          <pre id="requestedConstraints">{}</pre>
+        </article>
+        <article class="panel">
+          <h2>Actual settings</h2>
+          <pre id="actualSettings">No active stream.</pre>
+        </article>
+        <article class="panel">
+          <h2>Video capabilities</h2>
+          <pre id="capabilities">No active video track.</pre>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
