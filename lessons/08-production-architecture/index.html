@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>第 08 课：生产 WebRTC 架构</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">Lesson 08 · Architecture</p>
+        <h1>生产架构：信令、STUN/TURN、安全与演进</h1>
+        <p>从单页 demo 走向生产系统：用交互式架构推演器理解每个组件的边界和风险。</p>
+      </header>
+
+      <section class="stages" aria-label="架构阶段">
+        <button data-stage="prototype">单房间原型</button>
+        <button data-stage="mesh">多人 Mesh</button>
+        <button data-stage="sfu">SFU 生产化</button>
+        <button data-stage="ops">质量与安全运营</button>
+      </section>
+
+      <section class="architecture">
+        <article class="diagram" id="diagram" aria-label="架构图"></article>
+        <article class="details">
+          <h2 id="stageTitle"></h2>
+          <p id="stageSummary"></p>
+          <h3>核心决策</h3>
+          <ul id="decisions"></ul>
+          <h3>风险清单</h3>
+          <ul id="risks"></ul>
+        </article>
+      </section>
+
+      <section class="checklist">
+        <h2>上线前检查</h2>
+        <label><input type="checkbox" /> HTTPS 与鉴权覆盖所有信令入口</label>
+        <label><input type="checkbox" /> TURN 凭证短期有效且按房间/用户隔离</label>
+        <label><input type="checkbox" /> getStats 指标脱敏后进入质量监控</label>
+        <label><input type="checkbox" /> 房间权限、踢人、禁麦、设备变更均有审计记录</label>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
