@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>第 04 课：ICE 候选与本地信令模拟</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Lesson 04</p>
+        <h1>ICE 候选与本地信令模拟</h1>
+        <p>把 SDP 与 ICE 候选拆成两类信令消息，观察连接从协商到连通的过程。</p>
+      </section>
+
+      <section class="controls" aria-label="实验控制">
+        <button id="startButton">启动本地媒体</button>
+        <button id="sessionButton" disabled>创建会话</button>
+        <button id="iceButton" disabled>交换 ICE 候选</button>
+        <button id="resetButton" disabled>重置实验</button>
+      </section>
+
+      <section class="layout">
+        <article class="card">
+          <h2>本地视频</h2>
+          <video id="localVideo" autoplay playsinline muted></video>
+        </article>
+        <article class="card">
+          <h2>远端视频</h2>
+          <video id="remoteVideo" autoplay playsinline></video>
+        </article>
+        <article class="card queue-card">
+          <h2>本地信令队列</h2>
+          <ul id="signalList"></ul>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>状态日志</h2>
+        <pre id="logOutput" aria-live="polite">等待启动实验……</pre>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
