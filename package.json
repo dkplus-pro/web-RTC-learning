@@ -1,0 +1,19 @@
+{
+  "name": "web-rtc-learning",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A progressive WebRTC course with isolated runnable demos.",
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 5173",
+    "validate": "node scripts/validate-course.mjs",
+    "lesson:01": "cd lessons/01-media-capture && python3 -m http.server 5101",
+    "lesson:02": "cd lessons/02-device-constraints && python3 -m http.server 5102",
+    "lesson:03": "cd lessons/03-peer-connection && python3 -m http.server 5103",
+    "lesson:04": "cd lessons/04-ice-signaling && python3 -m http.server 5104",
+    "lesson:05": "cd lessons/05-data-channel && python3 -m http.server 5105",
+    "lesson:06": "cd lessons/06-screen-share && python3 -m http.server 5106",
+    "lesson:07": "cd lessons/07-stats-debugging && python3 -m http.server 5107",
+    "lesson:08": "cd lessons/08-production-architecture && python3 -m http.server 5108"
+  }
+}
